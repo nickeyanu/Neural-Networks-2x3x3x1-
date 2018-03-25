@@ -31,14 +31,14 @@ def sigm_derivative(x):
 
 
 # number of iterations 
-iter= 100
+iter= 10
 
 #iteration
 for j in range (0,4):
-    
     X=np.array([[Input[0][j],Input[1][j]]])
     T=Input[2][j]
-    for i in range (0,10):
+    
+    for i in range (0,iter):
         #output from hidden layers
         F2=X.dot(W)+Bw
         O2=sigmoid(F2)
