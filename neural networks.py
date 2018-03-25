@@ -15,13 +15,13 @@ np.random.seed(0)
 
 # first laye is x1 2nd layer is x2 and 3rd year is output
 Input=np.array([[0.05,0.09,0.12,0.15],[0.02,0.11,0.20,0.22],[0.50474,0.51224,0.51899,0.52223]])
-n= 0.08
-W=np.random.random((2, 3))
-V=np.random.random((3, 3))
-U=np.random.random((3, 1))
-Bw=np.zeros((1, 3))
-Bv=np.zeros((1, 3))
-Bu=np.zeros((1,1))
+n= 0.5                          #learning rate
+W=np.random.random((2, 3))      #weight of layer 1
+V=np.random.random((3, 3))      #weight of layer 2
+U=np.random.random((3, 1))      #weight of layer 3
+Bw=np.zeros((1, 3))             #bias value of layer 1 (initially zero)
+Bv=np.zeros((1, 3))             #bias value of layer 2 (initially zero)
+Bu=np.zeros((1,1))              #bias value of layer 3 (initially zero)
 
 #defining tan-sigmoid and sigmoid
 def sigmoid(x):
@@ -30,8 +30,8 @@ def sigm_derivative(x):
     return (x*(1-x))
 
 
-# number of iterations 
-iter= 10
+# number of iterations to train each point 
+iter= 20
 
 #iteration
 for j in range (0,4):
@@ -74,3 +74,14 @@ for j in range (0,4):
         Bv= Bv+ D3*n
         W= W+ np.transpose(X).dot(D2)*n
         Bw= Bw+ D2*n
+
+#sample value to check (change to check another value)
+test_X=np.array([[0.22,0.28]])                      
+F2=X.dot(W)+Bw
+O2=sigmoid(F2)        
+F3=O2.dot(V)+Bv
+O3=sigmoid(F3)
+F4=O3.dot(U)+Bu
+Y=sigmoid(F4)
+
+print("Calculated output value is ",Y)
