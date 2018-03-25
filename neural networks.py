@@ -15,7 +15,7 @@ np.random.seed(0)
 
 # first laye is x1 2nd layer is x2 and 3rd year is output
 #sample input (insert your training data set in given manner)
-Input=np.array([[0.05,0.09,0.12,0.15],[0.02,0.11,0.20,0.22],[0.50474,0.51224,0.51899,0.52223]])
+Input=np.array([[0.09,0.10,0.14,0.18],[0.04,0.10,0.21,0.24],[1.0, 1.0, 1.0, 1.0]])
 n= 0.5                          #learning rate
 W=np.random.random((2, 3))      #weight of layer 1
 V=np.random.random((3, 3))      #weight of layer 2
