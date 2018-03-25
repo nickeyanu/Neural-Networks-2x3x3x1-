@@ -14,7 +14,7 @@ np.random.seed(0)
 #Setting up learning rate, weights and bias values
 
 # first laye is x1 2nd layer is x2 and 3rd year is output
-#Input=np.array([[0.05,0.09,0.12,0.15],[0.02,0.11,0.20,0.22],[0.50474,0.51224,0.51899,0.52223]])
+Input=np.array([[0.05,0.09,0.12,0.15],[0.02,0.11,0.20,0.22],[0.50474,0.51224,0.51899,0.52223]])
 n= 0.08
 W=np.random.random((2, 3))
 V=np.random.random((3, 3))
@@ -35,6 +35,7 @@ iter= 100
 
 #iteration
 for j in range (0,4):
+    
     X=np.array([[Input[0][j],Input[1][j]]])
     T=Input[2][j]
     for i in range (0,10):
@@ -68,8 +69,8 @@ for j in range (0,4):
         
         #updating weights and bias value
         U= U+ np.transpose(O3).dot(D4)*n
-        Bu= Bu+ np.sum(D4)*n
+        Bu= Bu+ np.sum(D4, axis=0)*n
         V= V+ np.transpose(O2).dot(D3)*n
-        Bv= Bv+ np.sum(D3)*n
+        Bv= Bv+ np.sum(D3, axis=0)*n
         W= W+ np.transpose(X).dot(D2)*n
-        Bw= Bw+ np.sum(D2)*n
+        Bw= Bw+ np.sum(D2, axis=0)*n
