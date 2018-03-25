@@ -69,8 +69,8 @@ for j in range (0,4):
         
         #updating weights and bias value
         U= U+ np.transpose(O3).dot(D4)*n
-        Bu= Bu+ np.sum(D4, axis=0)*n
+        Bu= Bu+ D4*n
         V= V+ np.transpose(O2).dot(D3)*n
-        Bv= Bv+ np.sum(D3, axis=0)*n
+        Bv= Bv+ D3*n
         W= W+ np.transpose(X).dot(D2)*n
-        Bw= Bw+ np.sum(D2, axis=0)*n
+        Bw= Bw+ D2*n
