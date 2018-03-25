@@ -35,7 +35,7 @@ def sigm_derivative(x):
 iter= 20
 
 #iteration
-for j in range (0,4):
+for j in range (0,Input.shape[1]):
     X=np.array([[Input[0][j],Input[1][j]]])
     T=Input[2][j]
     
