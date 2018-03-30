@@ -52,7 +52,7 @@ for j in range (0,Input.shape[1]):
         Y=sigmoid(F4)
         
         #Loss function
-        E=0.5*(T-Y)**2
+        E=T-Y
               
         #adjusting weights and bais value through backpropagation
         
